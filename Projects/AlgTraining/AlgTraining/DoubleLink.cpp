@@ -1,34 +1,34 @@
 #include "DoubleLink.h"
 #include <iostream>
 
-bool DoubleLink::AddAtHead(LinkItem item) {
+bool DoubleLink::AddAtHead(LinkItem* item) {
 
-	LinkItem* newNode = new LinkItem(item);
+	//LinkItem* newNode = new LinkItem(item);
 
-	if (newNode == NULL) {
+	if (item == NULL) {
 		std::cout << "内存分配失败，新结点无法创建";
 		return false;
 	}
 
 	if (phead->next == NULL) {
-		phead->next = newNode;
-		newNode->previous = phead;
+		phead->next = item;
+		item->previous = phead;
 		return true;
 	}
 	else {
-		newNode->next = phead->next;
-		phead->next->previous = newNode;
-		phead->next = newNode;
-		newNode->previous = phead;
+		item->next = phead->next;
+		phead->next->previous = item;
+		phead->next = item;
+		item->previous = phead;
 		return true;
 	}
 
 }
 
-bool DoubleLink::AddAtTail(LinkItem item) {
-	LinkItem* newNode = new LinkItem();
+bool DoubleLink::AddAtTail(LinkItem* item) {
+	//LinkItem* newNode = new LinkItem();
 
-	if (newNode == nullptr) {
+	if (item == NULL) {
 		std::cout << "内存分配失败，新结点无法创建";
 		return false;
 	}
@@ -39,8 +39,8 @@ bool DoubleLink::AddAtTail(LinkItem item) {
 		last = last->next;
 	}
 
-	last->next = newNode;
-	newNode->previous = last;
+	last->next = item;
+	item->previous = last;
 	return true;
 }
 
@@ -83,8 +83,39 @@ LinkItem* DoubleLink::Search(int value) {
 	}
 }
 
-int main() {
+void DoubleLink::PrintValue() {
 
+	LinkItem* pMove = phead->next;
+	if (pMove == NULL)//链表为空
+	{
+		std::cout << "链表为空";
+	}
+	while (pMove != NULL)//遍历链表
+	{
+		std::cout <<  pMove->value;
+		pMove = pMove->next;	
+	}
+}
+
+
+int main() {
+	DoubleLink *mLink = new DoubleLink();
+	LinkItem* itemA;
+	itemA->value = 1;
+
+	LinkItem* itemB;
+	itemB->value = 2;
+
+	LinkItem* itemC;
+	itemC->value = 3;
+
+	mLink->AddAtHead(itemA);
+	mLink->AddAtHead(itemB);
+	mLink->AddAtHead(itemC);
+	mLink->PrintValue();
+
+	delete mLink;
+	
 }
 
 
