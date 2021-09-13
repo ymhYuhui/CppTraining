@@ -1,0 +1,3 @@
+﻿  DoubleLink.cpp
+D:\CppProjects\CppTraining\Projects\AlgTraining\AlgTraining\DoubleLink.cpp(84): warning C4715: “DoubleLink::Search”: 不是所有的控件路径都返回值
+  AlgTraining.vcxproj -> D:\CppProjects\CppTraining\Projects\AlgTraining\Debug\AlgTraining.exe
