@@ -2,11 +2,61 @@
 //
 
 #include <iostream>
+#include "DoubleLink.h"
 
-//int main()
-//{
-//    std::cout << "hello world!\n";
-//}
+int main() {
+	DoubleLink* mLink = new DoubleLink();
+
+	LinkItem* itemA = new LinkItem();
+	itemA->value = 1;
+
+	LinkItem* itemB = new LinkItem();
+	itemB->value = 2;
+
+	LinkItem* itemC = new LinkItem();
+	itemC->value = 3;
+
+	LinkItem* itemD = new LinkItem();
+	itemD->value = 9;
+
+
+	mLink->AddAtHead(itemA);
+	mLink->AddAtHead(itemB);
+	mLink->AddAtTail(itemC);
+	mLink->lenth = mLink->GetLenth();
+
+
+	std::cout << "here is lenth\t" << mLink->lenth << "-------------- \n";
+
+
+	mLink->PrintValue();
+
+	std::cout << "here is AddAtItem-------------\n";
+	mLink->AddAtItem(2, itemD);
+
+	mLink->lenth = mLink->GetLenth();
+	std::cout << "here is lenth " << mLink->lenth << "--------------- \n";
+	mLink->PrintValue();
+
+
+	mLink->Delete(3);
+	std::cout << "here is del------------- \n";
+	mLink->PrintValue();
+
+
+	std::cout << "here is Search \t" << mLink->Search(9)->value << "------------- \n";
+
+	mLink->Clear();
+	std::cout << "here is Clear \n";
+	mLink->PrintValue();
+
+	delete mLink;
+
+
+}
+
+
+
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
 // 调试程序: F5 或调试 >“开始调试”菜单

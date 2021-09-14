@@ -3,7 +3,6 @@
 
 bool DoubleLink::AddAtHead(LinkItem* item) {
 
-	//LinkItem* newNode = new LinkItem(item);
 
 	if (item == NULL) {
 		std::cout << "内存分配失败，新结点无法创建";
@@ -14,6 +13,7 @@ bool DoubleLink::AddAtHead(LinkItem* item) {
 		phead->next = item;
 		item->previous = phead;
 		return true;
+
 	}
 	else {
 		item->next = phead->next;
@@ -21,12 +21,12 @@ bool DoubleLink::AddAtHead(LinkItem* item) {
 		phead->next = item;
 		item->previous = phead;
 		return true;
+
 	}
 
 }
 
 bool DoubleLink::AddAtTail(LinkItem* item) {
-	//LinkItem* newNode = new LinkItem();
 
 	if (item == NULL) {
 		std::cout << "内存分配失败，新结点无法创建";
@@ -44,11 +44,33 @@ bool DoubleLink::AddAtTail(LinkItem* item) {
 	return true;
 }
 
+bool DoubleLink::AddAtItem(int index, LinkItem* item) {
+	LinkItem* pMove = phead;
+
+	if (index < 0 || index > lenth) {
+		std::cout << "输入正确的值";
+		return false;
+	}
+
+	for (int i = 1; i <= index; i++)
+	{
+		pMove = pMove->next;
+	}
+
+	item->next = pMove;
+	pMove->previous->next = item;
+	item->previous = pMove->previous;
+	pMove->previous = item;
+
+
+	return true;
+}
+
 bool DoubleLink::Delete(int index) {
 	LinkItem* pMove = phead;
 	LinkItem* pDelete;
 
-	if (index <0 || index>lenth) {
+	if (index < 0 || index > lenth) {
 		std::cout << "输入正确的值";
 		return false;
 	}
@@ -63,7 +85,7 @@ bool DoubleLink::Delete(int index) {
 	pMove->previous->next = pDelete->next;
 	pMove->next->previous = pDelete->previous;
 
-	delete pDelete; 
+	delete pDelete;
 
 	return true;
 }
@@ -89,33 +111,55 @@ void DoubleLink::PrintValue() {
 	if (pMove == NULL)//链表为空
 	{
 		std::cout << "链表为空";
+		return;
 	}
-	while (pMove != NULL)//遍历链表
+
+	while (pMove)//遍历链表
 	{
-		std::cout <<  pMove->value;
-		pMove = pMove->next;	
+		std::cout << pMove->value << "\n";
+		pMove = pMove->next;
 	}
+
+
 }
+int DoubleLink::GetLenth() {
+	int i = 0;
 
+	LinkItem* pMove = phead->next;
+	if (pMove == NULL)//链表为空
+	{
+		std::cout << "链表为空";
+		i = 0;
+	}
 
-int main() {
-	DoubleLink *mLink = new DoubleLink();
-	LinkItem* itemA;
-	itemA->value = 1;
+	while (pMove)//遍历链表
+	{
+		pMove = pMove->next;
+		i++;
+	}
 
-	LinkItem* itemB;
-	itemB->value = 2;
+	return i;
 
-	LinkItem* itemC;
-	itemC->value = 3;
-
-	mLink->AddAtHead(itemA);
-	mLink->AddAtHead(itemB);
-	mLink->AddAtHead(itemC);
-	mLink->PrintValue();
-
-	delete mLink;
-	
 }
+bool DoubleLink::Clear() {
+	int i = 0;
 
+	LinkItem* pMove = phead->next;
+	LinkItem* pDelete = pMove;
+
+	if (pMove == NULL)//链表为空
+	{
+		std::cout << "链表为空";
+		return false;
+	}
+
+	while (pMove)//遍历链表
+	{
+		pDelete = pMove;
+		pMove = pMove->next;
+		phead->next = pMove;
+		delete pDelete;
+	}
+	return true;
+}
 
