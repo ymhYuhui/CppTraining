@@ -122,6 +122,7 @@ void DoubleLink::PrintValue() {
 
 
 }
+
 int DoubleLink::GetLenth() {
 	int i = 0;
 
@@ -141,6 +142,7 @@ int DoubleLink::GetLenth() {
 	return i;
 
 }
+
 bool DoubleLink::Clear() {
 	int i = 0;
 

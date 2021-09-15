@@ -13,18 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="DataStruct">
+      <UniqueIdentifier>{635032aa-3801-46b5-9eea-80e5eaed5113}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Test">
+      <UniqueIdentifier>{443d7c23-9d8c-43d5-bf55-4e2cd7d7c66f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SortALGs">
+      <UniqueIdentifier>{a08d2f6c-c4a2-4b23-83ee-b4dff7d855f6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AlgTraining.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="DoubleLink.cpp">
-      <Filter>源文件</Filter>
+      <Filter>DataStruct</Filter>
+    </ClCompile>
+    <ClCompile Include="AlgTraining.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+    <ClCompile Include="ComparisonSort.cpp">
+      <Filter>SortALGs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DoubleLink.h">
-      <Filter>头文件</Filter>
+      <Filter>DataStruct</Filter>
+    </ClInclude>
+    <ClInclude Include="ComparisonSort.h">
+      <Filter>SortALGs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
