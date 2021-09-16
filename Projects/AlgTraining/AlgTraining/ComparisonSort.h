@@ -2,14 +2,19 @@
 class ComparisonSort
 {
 public:
-	ComparisonSort() {};
+	ComparisonSort(int* arr,int length) {
+		this->mArray = arr;
+		this->length = length;
+	};
 	~ComparisonSort() {};
 
-	bool SelectionSort(int arr[], int length);
+	bool SelectionSort();
 
-	int	GetLength(int arr[]);
-	void Print(int arr[]);
+	int GetLength();
+	void Print();
 
 private:
+	int* mArray;
+	int length;
 };
 

@@ -2,43 +2,42 @@
 #include <iostream>
 
 
-bool ComparisonSort::SelectionSort(int arr[], int length) {
-	int max = *arr;
+bool ComparisonSort::SelectionSort() {
+	int* max = this->mArray;
 	int current = 0;
-	int* pmove = arr;
-	if (arr == nullptr)
+	int* pmove = this->mArray;
+	if (this->mArray == nullptr)
 	{
 		std::cout << "here is a null arr";
 		return false;
 	}
 
-	for (int i = 0; i < length; i++)
+	for (int i = 0; i < this->length; i++)
 	{
-		while (pmove != nullptr)
+		pmove = this->mArray + i;
+		max = this->mArray + i;
+
+		for (int j = i; j < this->length; j++)
 		{
-			pmove++;
-			if (max < *pmove)
+			if (*max < *pmove)
 			{
-				max = *pmove;
-				current = arr[i];
-				arr[i] = max;
-				max = current;
+				max = pmove;
 			}
+			pmove++;
 		}
+		current = this->mArray[i];
+		this->mArray[i] = *max;
+		*max = current;
+
 	}
 
 	return true;
 }
 
-int ComparisonSort::GetLength(int* arr) {
-	
-	int Length = sizeof(arr) / sizeof(arr[0]);
-	return Length;
-}
+void ComparisonSort::Print() {
 
-//void ComparisonSort::Print(int arr[]) {
-//	for (int* p = arr; p <= &arr[sizeof(arr) / sizeof(arr[0]) - 1]; p++)
-//	{
-//		std::cout << p ;
-//	}
-//}
+	for (int* p = this->mArray; p <= &this->mArray[this->length - 1]; p++)
+	{
+		std::cout << *p;
+	}
+}

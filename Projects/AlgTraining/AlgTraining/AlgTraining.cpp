@@ -7,6 +7,7 @@
 void DoubleLinkTest();
 void SelectionSortTest();
 
+
 int main() {
 	SelectionSortTest();
 }
@@ -62,14 +63,24 @@ void DoubleLinkTest() {
 }
 
 void SelectionSortTest() {
-	int testArr[10] = { 1,8,5,4,6,3,2,7,0,9 };
-	ComparisonSort* mComparisonSort = new ComparisonSort();
 
-	mComparisonSort->Print(testArr);
-	std::cout << "testArr length is" << mComparisonSort->GetLength(testArr) << "\n";
+	int testArr[10] = { 8,1,5,4,6,3,2,7,0,9 };
 
-	mComparisonSort->SelectionSort(testArr, mComparisonSort->GetLength(testArr));
-	mComparisonSort->Print(testArr);
+	ComparisonSort* mComparisonSort = new ComparisonSort(testArr,10);
+
+	std::cout << "testArr length is\t" << sizeof(testArr) / sizeof(testArr[0]) << "\n";
+
+	mComparisonSort->Print();
+	std::cout << "\n";
+	mComparisonSort->SelectionSort();
+	mComparisonSort->Print();
+
+
+
+
+	delete mComparisonSort;
 
 }
+
+
 
