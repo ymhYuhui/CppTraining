@@ -8,9 +8,9 @@ public:
 	};
 	~ComparisonSort() {};
 
-	bool SelectionSort();
+	bool SelectionSort(bool isFromBigToSmall);
+	bool InsertSort(bool isFromBigToSmall);
 
-	int GetLength();
 	void Print();
 
 private:

@@ -34,8 +34,7 @@ bool DoubleLink::AddAtTail(LinkItem* item) {
 	}
 	LinkItem* last = phead;
 
-	while (last->next != NULL)
-	{
+	while (last->next != NULL) {
 		last = last->next;
 	}
 
@@ -52,8 +51,7 @@ bool DoubleLink::AddAtItem(int index, LinkItem* item) {
 		return false;
 	}
 
-	for (int i = 1; i <= index; i++)
-	{
+	for (int i = 1; i <= index; i++) {
 		pMove = pMove->next;
 	}
 
@@ -75,8 +73,7 @@ bool DoubleLink::Delete(int index) {
 		return false;
 	}
 
-	for (int i = 1; i <= index; i++)
-	{
+	for (int i = 1; i <= index; i++) {
 		pMove = pMove->next;
 	}
 
@@ -92,12 +89,10 @@ bool DoubleLink::Delete(int index) {
 
 LinkItem* DoubleLink::Search(int value) {
 	LinkItem* pMove = phead->next;
-	if (pMove == NULL)//链表为空
-	{
+	if (pMove == NULL) {
 		std::cout << "链表为空";
 	}
-	while (pMove)//遍历链表
-	{
+	while (pMove) {
 		if (pMove->value == value) {
 			return pMove;
 		}
@@ -108,14 +103,12 @@ LinkItem* DoubleLink::Search(int value) {
 void DoubleLink::PrintValue() {
 
 	LinkItem* pMove = phead->next;
-	if (pMove == NULL)//链表为空
-	{
+	if (pMove == NULL) {
 		std::cout << "链表为空";
 		return;
 	}
 
-	while (pMove)//遍历链表
-	{
+	while (pMove) {
 		std::cout << pMove->value << "\n";
 		pMove = pMove->next;
 	}
@@ -127,14 +120,12 @@ int DoubleLink::GetLenth() {
 	int i = 0;
 
 	LinkItem* pMove = phead->next;
-	if (pMove == NULL)//链表为空
-	{
+	if (pMove == NULL) {
 		std::cout << "链表为空";
 		i = 0;
 	}
 
-	while (pMove)//遍历链表
-	{
+	while (pMove) {
 		pMove = pMove->next;
 		i++;
 	}
@@ -149,14 +140,12 @@ bool DoubleLink::Clear() {
 	LinkItem* pMove = phead->next;
 	LinkItem* pDelete = pMove;
 
-	if (pMove == NULL)//链表为空
-	{
+	if (pMove == NULL) {
 		std::cout << "链表为空";
 		return false;
 	}
 
-	while (pMove)//遍历链表
-	{
+	while (pMove) {
 		pDelete = pMove;
 		pMove = pMove->next;
 		phead->next = pMove;

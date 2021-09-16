@@ -6,10 +6,12 @@
 #include "ComparisonSort.h"
 void DoubleLinkTest();
 void SelectionSortTest();
+void InsertSortTest();
 
 
 int main() {
-	SelectionSortTest();
+	//SelectionSortTest();
+	InsertSortTest();
 }
 
 void DoubleLinkTest() {
@@ -66,19 +68,45 @@ void SelectionSortTest() {
 
 	int testArr[10] = { 8,1,5,4,6,3,2,7,0,9 };
 
-	ComparisonSort* mComparisonSort = new ComparisonSort(testArr,10);
+	ComparisonSort* mSelectionSort = new ComparisonSort(testArr,10);
 
 	std::cout << "testArr length is\t" << sizeof(testArr) / sizeof(testArr[0]) << "\n";
 
-	mComparisonSort->Print();
+	mSelectionSort->Print();
 	std::cout << "\n";
-	mComparisonSort->SelectionSort();
-	mComparisonSort->Print();
+	mSelectionSort->SelectionSort(true);
+	mSelectionSort->Print();
+
+	std::cout << "\n";
+	mSelectionSort->SelectionSort(false);
+	mSelectionSort->Print();
 
 
 
+	delete mSelectionSort;
 
-	delete mComparisonSort;
+}
+
+void InsertSortTest() {
+
+	int testArr[10] = { 8,1,5,4,6,3,2,7,0,9 };
+
+	ComparisonSort* mInsertSort = new ComparisonSort(testArr, sizeof(testArr) / sizeof(testArr[0]));
+
+	std::cout << "testArr length is\t" << sizeof(testArr) / sizeof(testArr[0]) << "\n";
+
+	mInsertSort->Print();
+	std::cout << "\n";
+
+	mInsertSort->InsertSort(true);
+	mInsertSort->Print();
+
+	std::cout << "\n";
+	mInsertSort->InsertSort(false);
+	mInsertSort->Print();
+
+
+	delete mInsertSort;
 
 }
 
