@@ -10,6 +10,8 @@ public:
 
 	bool SelectionSort(bool isFromBigToSmall);
 	bool InsertSort(bool isFromBigToSmall);
+	bool BubbleSort(bool isFromBigToSmall);
+	bool ShellSort(bool isFromBigToSmall);
 
 	void Print();
 

@@ -7,11 +7,13 @@
 void DoubleLinkTest();
 void SelectionSortTest();
 void InsertSortTest();
-
+void BubbleSortTest();
 
 int main() {
 	//SelectionSortTest();
-	InsertSortTest();
+	//InsertSortTest();
+
+	BubbleSortTest();
 }
 
 void DoubleLinkTest() {
@@ -82,7 +84,6 @@ void SelectionSortTest() {
 	mSelectionSort->Print();
 
 
-
 	delete mSelectionSort;
 
 }
@@ -103,6 +104,29 @@ void InsertSortTest() {
 
 	std::cout << "\n";
 	mInsertSort->InsertSort(false);
+	mInsertSort->Print();
+
+
+	delete mInsertSort;
+
+}
+
+void BubbleSortTest() {
+
+	int testArr[10] = { 8,1,5,4,6,3,2,7,0,9 };
+
+	ComparisonSort* mInsertSort = new ComparisonSort(testArr, sizeof(testArr) / sizeof(testArr[0]));
+
+	std::cout << "testArr length is\t" << sizeof(testArr) / sizeof(testArr[0]) << "\n";
+
+	mInsertSort->Print();
+	std::cout << "\n";
+
+	mInsertSort->BubbleSort(true);
+	mInsertSort->Print();
+
+	std::cout << "\n";
+	mInsertSort->BubbleSort(false);
 	mInsertSort->Print();
 
 
