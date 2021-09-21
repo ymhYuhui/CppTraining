@@ -8,6 +8,11 @@ a repository for training cpp
 
 2. 完成了简单选择排序的实现
 
+3. 完成了插入排序的实现
+
+4. 完成了冒泡排序的实现
+
+
 
 ## Notes c++ 相关笔记
 
