@@ -8,12 +8,14 @@ void DoubleLinkTest();
 void SelectionSortTest();
 void InsertSortTest();
 void BubbleSortTest();
+void MergeSortTest();
 
 int main() {
 	//SelectionSortTest();
 	//InsertSortTest();
 
-	BubbleSortTest();
+	//BubbleSortTest();
+	MergeSortTest();
 }
 
 void DoubleLinkTest() {
@@ -70,7 +72,7 @@ void SelectionSortTest() {
 
 	int testArr[10] = { 8,1,5,4,6,3,2,7,0,9 };
 
-	ComparisonSort* mSelectionSort = new ComparisonSort(testArr,10);
+	ComparisonSort* mSelectionSort = new ComparisonSort(testArr, 10);
 
 	std::cout << "testArr length is\t" << sizeof(testArr) / sizeof(testArr[0]) << "\n";
 
@@ -115,24 +117,46 @@ void BubbleSortTest() {
 
 	int testArr[10] = { 8,1,5,4,6,3,2,7,0,9 };
 
-	ComparisonSort* mInsertSort = new ComparisonSort(testArr, sizeof(testArr) / sizeof(testArr[0]));
+	ComparisonSort* mBubbleSort = new ComparisonSort(testArr, sizeof(testArr) / sizeof(testArr[0]));
 
 	std::cout << "testArr length is\t" << sizeof(testArr) / sizeof(testArr[0]) << "\n";
 
-	mInsertSort->Print();
+	mBubbleSort->Print();
 	std::cout << "\n";
 
-	mInsertSort->BubbleSort(true);
-	mInsertSort->Print();
+	mBubbleSort->BubbleSort(true);
+	mBubbleSort->Print();
 
 	std::cout << "\n";
-	mInsertSort->BubbleSort(false);
-	mInsertSort->Print();
+	mBubbleSort->BubbleSort(false);
+	mBubbleSort->Print();
 
 
-	delete mInsertSort;
+	delete mBubbleSort;
 
 }
 
+void MergeSortTest() {
+
+	int testArr[10] = { 8,1,5,4,6,3,2,7,0,9 };
+
+	ComparisonSort* mMergeSort = new ComparisonSort(testArr, sizeof(testArr) / sizeof(testArr[0]));
+
+	std::cout << "testArr length is\t" << sizeof(testArr) / sizeof(testArr[0]) << "\n";
+
+	mMergeSort->Print();
+	std::cout << "\n";
+
+	mMergeSort->MergeSort(0, 9);
+	mMergeSort->Print();
+
+	std::cout << "\n";
+	mMergeSort->MergeSort(0, 9);
+	mMergeSort->Print();
+
+
+	delete mMergeSort;
+
+}
 
 

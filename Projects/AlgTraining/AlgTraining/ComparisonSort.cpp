@@ -62,10 +62,54 @@ bool ComparisonSort::InsertSort(bool isFromBigToSmall) {
 	return true;
 }
 
-
 bool ComparisonSort::ShellSort(bool isFromBigToSmall) {
-
+	int gap = 0;
+	return true;
 }
+void ComparisonSort::MergeSort(int start, int end) {
+	int mid = start + (end - start) / 2;
+	if (start >= end)
+	{
+		return;
+	}
+	MergeSort(start, mid);
+	MergeSort(mid + 1, end);
+
+	Merge(start, end, mid);
+}
+
+void  ComparisonSort::Merge(int start, int end, int mid) {
+	int i = start, j = mid + 1, k = 0;
+	int* temp = new int[end - start + 1];
+	while (i <= mid && j <= end)
+	{
+		if (this->mArray[i] < this->mArray[j])
+		{
+			temp[k++] = this->mArray[i++];
+		}
+		else {
+			temp[k++] = this->mArray[j++];
+		}
+	}
+
+	while (i <= mid)
+	{
+		temp[k++] = this->mArray[i++];
+	}
+	while (j <= end)
+	{
+		temp[k++] = this->mArray[j++];
+	}
+	for (i = start, k = 0; i <= end; i++, k++) {
+		this->mArray[i] = temp[k]; 
+	}
+	delete []temp;
+}
+bool ComparisonSort::SwapItem() {
+
+	return true;
+}
+
 void ComparisonSort::Print() {
 
 	for (int* p = this->mArray; p <= &this->mArray[this->length - 1]; p++) {

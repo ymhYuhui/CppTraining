@@ -12,7 +12,7 @@ a repository for training cpp
 
 4. 完成了冒泡排序的实现
 
-
+5. 完成了归并排序的实现
 
 ## Notes c++ 相关笔记
 
