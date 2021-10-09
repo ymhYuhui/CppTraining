@@ -33,6 +33,9 @@
     <ClCompile Include="ComparisonSort.cpp">
       <Filter>SortALGs</Filter>
     </ClCompile>
+    <ClCompile Include="Stack.cpp">
+      <Filter>DataStruct</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DoubleLink.h">
@@ -40,6 +43,9 @@
     </ClInclude>
     <ClInclude Include="ComparisonSort.h">
       <Filter>SortALGs</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>DataStruct</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

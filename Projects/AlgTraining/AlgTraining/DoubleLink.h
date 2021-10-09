@@ -30,7 +30,7 @@ public:
 	DoubleLink() {
 		phead = new LinkItem();
 		phead->previous = phead->next = NULL ;
-		lenth = 0;
+		length = 0;
 	};
 
 	~DoubleLink() {};
@@ -41,9 +41,9 @@ public:
 	bool AddAtItem(int index, LinkItem* item);
 
 	void PrintValue();
-	int GetLenth();
+	int Getlength();
 	bool Clear();
-	int lenth;
+	int length;
 
 	LinkItem* Search(int index);
 

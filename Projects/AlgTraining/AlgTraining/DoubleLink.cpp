@@ -46,7 +46,7 @@ bool DoubleLink::AddAtTail(LinkItem* item) {
 bool DoubleLink::AddAtItem(int index, LinkItem* item) {
 	LinkItem* pMove = phead;
 
-	if (index < 0 || index > lenth) {
+	if (index < 0 || index > length) {
 		std::cout << "输入正确的值";
 		return false;
 	}
@@ -68,7 +68,7 @@ bool DoubleLink::Delete(int index) {
 	LinkItem* pMove = phead;
 	LinkItem* pDelete;
 
-	if (index < 0 || index > lenth) {
+	if (index < 0 || index > length) {
 		std::cout << "输入正确的值";
 		return false;
 	}
@@ -116,7 +116,7 @@ void DoubleLink::PrintValue() {
 
 }
 
-int DoubleLink::GetLenth() {
+int DoubleLink::Getlength() {
 	int i = 0;
 
 	LinkItem* pMove = phead->next;

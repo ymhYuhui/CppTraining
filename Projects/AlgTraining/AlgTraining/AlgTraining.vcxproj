@@ -142,10 +142,12 @@
     <ClCompile Include="AlgTraining.cpp" />
     <ClCompile Include="ComparisonSort.cpp" />
     <ClCompile Include="DoubleLink.cpp" />
+    <ClCompile Include="Stack.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComparisonSort.h" />
     <ClInclude Include="DoubleLink.h" />
+    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -37,10 +37,10 @@ void DoubleLinkTest() {
 	mLink->AddAtHead(itemA);
 	mLink->AddAtHead(itemB);
 	mLink->AddAtTail(itemC);
-	mLink->lenth = mLink->GetLenth();
+	mLink->length = mLink->Getlength();
 
 
-	std::cout << "here is lenth\t" << mLink->lenth << "-------------- \n";
+	std::cout << "here is length\t" << mLink->length << "-------------- \n";
 
 
 	mLink->PrintValue();
@@ -48,8 +48,8 @@ void DoubleLinkTest() {
 	std::cout << "here is AddAtItem-------------\n";
 	mLink->AddAtItem(2, itemD);
 
-	mLink->lenth = mLink->GetLenth();
-	std::cout << "here is lenth " << mLink->lenth << "--------------- \n";
+	mLink->length = mLink->Getlength();
+	std::cout << "here is length " << mLink->length << "--------------- \n";
 	mLink->PrintValue();
 
 
