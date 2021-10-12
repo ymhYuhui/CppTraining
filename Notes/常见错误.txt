@@ -1,0 +1,9 @@
+0xCDCDCDCD - Created but not initialised 未初始化的堆内存
+
+0xDDDDDDDD - Deleted 引用的内存已经/对象被删除
+
+0xFEEEFEEE - Freed memory set by NT's heap manager 
+
+0xCCCCCCCC - Uninitialized locals in VC6 when you compile w/ /GZ 未初始化的栈内存
+
+0xABABABAB- Memory following a block allocated by LocalAlloc()

@@ -3,19 +3,23 @@
 
 #include <iostream>
 #include "DoubleLink.h"
+#include "Stack.h"
 #include "ComparisonSort.h"
 void DoubleLinkTest();
 void SelectionSortTest();
 void InsertSortTest();
 void BubbleSortTest();
 void MergeSortTest();
+void StackTest();
 
 int main() {
 	//SelectionSortTest();
 	//InsertSortTest();
 
 	//BubbleSortTest();
-	MergeSortTest();
+	//MergeSortTest();
+
+	StackTest();
 }
 
 void DoubleLinkTest() {
@@ -68,6 +72,46 @@ void DoubleLinkTest() {
 
 }
 
+void StackTest() {
+	Stack* mStack = new Stack();
+
+	StackItem* itemA = new StackItem();
+	itemA->value = 1;
+
+	StackItem* itemB = new StackItem();
+	itemB->value = 2;
+
+	StackItem* itemC = new StackItem();
+	itemC->value = 3;
+
+	StackItem* itemD = new StackItem();
+	itemD->value = 9;
+
+
+	mStack->Push(itemA);
+	mStack->Push(itemB);
+	mStack->Push(itemC);
+	mStack->Push(itemD);
+
+
+	std::cout << "here is length\t" << mStack->length << "-------------- \n";
+
+
+	mStack->PrintValue();
+	mStack->Pop();
+	mStack->PrintValue();
+	mStack->Pop();
+	mStack->PrintValue();
+	mStack->Clear();
+	std::cout << "here is Clear \n";
+	mStack->PrintValue();
+
+	delete mStack;
+
+}
+
+
+#pragma region 排序算法的测试方法
 void SelectionSortTest() {
 
 	int testArr[10] = { 8,1,5,4,6,3,2,7,0,9 };
@@ -158,5 +202,8 @@ void MergeSortTest() {
 	delete mMergeSort;
 
 }
+
+#pragma endregion
+
 
 
