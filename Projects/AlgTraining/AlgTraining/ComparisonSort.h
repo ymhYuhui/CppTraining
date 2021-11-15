@@ -12,8 +12,11 @@ public:
 	bool InsertSort(bool isFromBigToSmall);
 	bool BubbleSort(bool isFromBigToSmall);
 	bool ShellSort(bool isFromBigToSmall);
-	bool SwapItem();
 	void MergeSort(int start, int end);
+	bool QuickSort();
+
+
+	bool SwapItem();
 	void Print();
 
 private:

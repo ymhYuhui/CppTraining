@@ -80,6 +80,10 @@ void ComparisonSort::MergeSort(int start, int end) {
 }
 
 
+bool ComparisonSort::QuickSort() {
+
+}
+
 void ComparisonSort::Merge(int start, int end, int mid) {
 	int i = start, j = mid + 1, k = 0;
 	int* temp = new int[end - start + 1];

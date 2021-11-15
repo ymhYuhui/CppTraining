@@ -8,7 +8,7 @@ a repository for training cpp
 
 1. 完成了双向链表的实现
 
-2.完成了简单栈的实现
+2. 完成了简单栈的实现
 
 ### 算法
 
