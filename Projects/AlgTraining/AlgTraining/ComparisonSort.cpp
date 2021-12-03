@@ -79,10 +79,43 @@ void ComparisonSort::MergeSort(int start, int end) {
 	Merge(start, end, mid);
 }
 
-
-bool ComparisonSort::QuickSort() {
-
+bool ComparisonSort::QuickSort(int* arr, int low, int high) {
+	if (low < high)
+	{
+		int key = Quick(arr, low, high);
+		QuickSort(arr, low, key - 1);
+		QuickSort(arr, key + 1, high);
+	}
+	return true;
 }
+int ComparisonSort::Quick(int* arr, int low, int high) {
+
+	int key = arr[low];
+	while (low < high)
+	{
+		while (low < high && arr[high] >= key)
+		{
+			high--;
+		}
+		if (low < high)
+		{
+			arr[low] = arr[high];
+		}
+		while (low < high && arr[low] <= key)
+		{
+			low++;
+		}
+		if (low < high)
+		{
+			arr[high] = arr[low];
+
+		}
+	}
+	 arr[low] = key ;
+
+	return low;
+}
+
 
 void ComparisonSort::Merge(int start, int end, int mid) {
 	int i = start, j = mid + 1, k = 0;
@@ -111,10 +144,15 @@ void ComparisonSort::Merge(int start, int end, int mid) {
 	}
 	delete[]temp;
 }
-bool ComparisonSort::SwapItem() {
 
+bool ComparisonSort::SwapItem(int* p, int* q) {
+	int* temp = nullptr;
+	temp = p;
+	q = p;
+	p = temp;
 	return true;
 }
+
 
 void ComparisonSort::Print() {
 

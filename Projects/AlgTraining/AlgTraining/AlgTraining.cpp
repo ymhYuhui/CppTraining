@@ -11,6 +11,7 @@ void InsertSortTest();
 void BubbleSortTest();
 void MergeSortTest();
 void StackTest();
+void QuickSortTest();
 
 int main() {
 	//SelectionSortTest();
@@ -20,6 +21,8 @@ int main() {
 	//MergeSortTest();
 
 	StackTest();
+
+	//QuickSortTest();
 }
 
 void DoubleLinkTest() {
@@ -131,6 +134,28 @@ void SelectionSortTest() {
 
 
 	delete mSelectionSort;
+
+}
+
+void QuickSortTest() {
+
+	int testArr[10] = { 8,1,5,4,6,3,2,7,0,9 };
+
+	ComparisonSort* mQuickShort = new ComparisonSort(testArr, 10);
+
+	std::cout << "testArr length is\t" << sizeof(testArr) / sizeof(testArr[0]) << "\n";
+
+	mQuickShort->Print();
+	std::cout << "\n";
+	mQuickShort->QuickSort(testArr,0,9);
+	mQuickShort->Print();
+
+	std::cout << "\n";
+	//mQuickShort->SelectionSort(false);
+	//mQuickShort->Print();
+
+
+	delete mQuickShort;
 
 }
 

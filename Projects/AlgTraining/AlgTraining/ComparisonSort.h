@@ -13,10 +13,10 @@ public:
 	bool BubbleSort(bool isFromBigToSmall);
 	bool ShellSort(bool isFromBigToSmall);
 	void MergeSort(int start, int end);
-	bool QuickSort();
+	bool QuickSort(int* arr, int low, int high);
 
 
-	bool SwapItem();
+	bool SwapItem(int* p, int* q);
 	void Print();
 
 private:
@@ -24,5 +24,7 @@ private:
 	int length;
 
 	void Merge(int start, int end, int mid);
+	int Quick(int* arr, int low, int high);
+
 };
 

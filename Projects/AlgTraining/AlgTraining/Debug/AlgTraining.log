@@ -1,4 +1,2 @@
-﻿  Stack.cpp
-D:\CppProjects\CppTraining\Projects\AlgTraining\AlgTraining\Stack.cpp(30,19): warning C4553: “==”: 未使用表达式结果；是否打算使用“=”?
-D:\CppProjects\CppTraining\Projects\AlgTraining\AlgTraining\Stack.cpp(18): warning C4715: “Stack::Push”: 不是所有的控件路径都返回值
+﻿  AlgTraining.cpp
   AlgTraining.vcxproj -> D:\CppProjects\CppTraining\Projects\AlgTraining\Debug\AlgTraining.exe
